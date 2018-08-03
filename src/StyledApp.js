@@ -5,7 +5,7 @@ export default styled.div`
   h2,
   h3,
   h4 {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Merriweather", sans-serif;
     font-weight: 900;
   }
   a {
