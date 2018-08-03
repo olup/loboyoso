@@ -15,7 +15,7 @@ chokidar.watch("content").on("all", () => reloadRoutes());
 let postsList = [];
 
 export default {
-  plugins: ["react-static-plugin-styled-components"],
+  plugins: ["react-static-plugin-emotion"],
   // siteRoot: "https://loboyoso.ga",
   getSiteData: () => ({
     title: "Lobo Y Oso"

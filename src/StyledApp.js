@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from "react-emotion";
 
-export default styled.div`
+export default styled("div")`
   h1,
   h2,
   h3,
