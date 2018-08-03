@@ -55,6 +55,7 @@ export default {
     ];
   },
   onBuild: async obj => {
+    fs.copyFileSync("dist/index.html", "dist/200.html");
     const feed = new rss({ title: "Lobo Y Oso" });
     for (const post of postsList) {
       feed.item({
