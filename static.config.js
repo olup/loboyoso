@@ -16,7 +16,7 @@ let postsList = [];
 
 export default {
   plugins: ["react-static-plugin-styled-components"],
-  siteRoot: "https://loboyoso.ga",
+  // siteRoot: "https://loboyoso.ga",
   getSiteData: () => ({
     title: "Lobo Y Oso"
   }),

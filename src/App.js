@@ -5,7 +5,6 @@ import logo from "./assets/logo.svg";
 //
 import Routes from "react-static-routes";
 
-import Typography from "./utils/typography";
 import "./assets/main.css";
 import StyleddApp from "./StyledApp.js";
 

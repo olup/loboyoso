@@ -35,6 +35,7 @@ export default styled.div`
 
   .post {
     line-height: 1.8;
+    font-family: "Merriweather";
     .date {
       font-size: 1rem;
       opacity: 0.5;
@@ -47,7 +48,11 @@ export default styled.div`
       margin-bottom: 0px;
     }
     p {
-      line-height: 2.5;
+      line-height: 2;
+      img {
+        display: block;
+        width: 100%;
+      }
     }
   }
 `;
