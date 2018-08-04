@@ -60,7 +60,7 @@ export default {
     for (const post of postsList) {
       feed.item({
         title: post.title,
-        description: post.contents,
+        description: post.summary,
         date: post.date
       });
     }
