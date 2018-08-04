@@ -1,10 +1,12 @@
 import { reloadRoutes } from "react-static/node";
+import React, { Component } from "react";
 import jdown from "jdown";
 import markdownIt from "markdown-it";
 import cheerio from "cheerio";
 import chokidar from "chokidar";
 import rss from "rss";
 import fs from "fs";
+import { ServerStyleSheet } from "styled-components";
 
 const summaryLength = 300;
 
@@ -15,7 +17,6 @@ chokidar.watch("content").on("all", () => reloadRoutes());
 let postsList = [];
 
 export default {
-  plugins: ["react-static-plugin-emotion"],
   // siteRoot: "https://loboyoso.ga",
   getSiteData: () => ({
     title: "Lobo Y Oso"
@@ -65,5 +66,29 @@ export default {
       });
     }
     fs.writeFileSync("dist/rss.xml", feed.xml(), "utf8");
+  },
+  renderToHtml: (render, Comp, meta) => {
+    const sheet = new ServerStyleSheet();
+    const html = render(sheet.collectStyles(<Comp />));
+    meta.styleTags = sheet.getStyleElement();
+    return html;
+  },
+  Document: class CustomHtml extends Component {
+    render() {
+      const { Html, Head, Body, children, renderMeta } = this.props;
+      return (
+        <Html>
+          <Head>
+            <meta charSet="UTF-8" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
+            {renderMeta.styleTags}
+          </Head>
+          <Body>{children}</Body>
+        </Html>
+      );
+    }
   }
 };

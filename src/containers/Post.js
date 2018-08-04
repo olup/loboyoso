@@ -4,10 +4,10 @@ import logo from "../assets/logo.svg";
 import Helmet from "react-helmet";
 import moment from "moment";
 import Md from "react-markdown";
-import styled from "react-emotion";
+import styled from "styled-components";
 //
 
-const SmallLogo = styled("img")`
+const SmallLogo = styled.img`
   width: 100px;
   margin: 20px 0;
 `;

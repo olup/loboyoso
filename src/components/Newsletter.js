@@ -1,9 +1,9 @@
 import React from "react";
-import styled from "react-emotion";
+import styled from "styled-components";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import pattern from "../assets/pattern.svg";
 
-const Container = styled("div")`
+const Container = styled.div`
   .email-form {
     padding: 20px;
     text-align: center;
