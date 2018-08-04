@@ -17,7 +17,8 @@ markdown.use(implicitFigures, {
   link: false
 });
 
-chokidar.watch("content").on("all", () => reloadRoutes());
+if (process.env.NODE_ENV !== "production")
+  chokidar.watch("content").on("all", () => reloadRoutes());
 
 let postsList = [];
 
