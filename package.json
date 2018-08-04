@@ -15,6 +15,7 @@
     "htmr": "0.6.3",
     "jdown": "^0.6.4",
     "markdown-it": "^8.4.2",
+    "markdown-it-implicit-figures": "^0.9.0",
     "moment": "^2.22.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

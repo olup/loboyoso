@@ -2,6 +2,7 @@ import { reloadRoutes } from "react-static/node";
 import React, { Component } from "react";
 import jdown from "jdown";
 import markdownIt from "markdown-it";
+import implicitFigures from "markdown-it-implicit-figures";
 import cheerio from "cheerio";
 import chokidar from "chokidar";
 import rss from "rss";
@@ -11,6 +12,10 @@ import { ServerStyleSheet } from "styled-components";
 const summaryLength = 300;
 
 const markdown = new markdownIt();
+markdown.use(implicitFigures, {
+  figcaption: true,
+  link: false
+});
 
 chokidar.watch("content").on("all", () => reloadRoutes());
 
@@ -26,6 +31,7 @@ export default {
 
     postsList = posts.map(post => {
       const html = markdown.render(post.contents);
+      console.log(html);
       const $ = cheerio.load(html);
       const summary = $("*")
         .text()

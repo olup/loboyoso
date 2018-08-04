@@ -3,7 +3,6 @@ import { withRouteData, Link } from "react-static";
 import logo from "../assets/logo.svg";
 import Helmet from "react-helmet";
 import moment from "moment";
-import Md from "react-markdown";
 import styled from "styled-components";
 //
 
@@ -28,7 +27,7 @@ export default withRouteData(({ post }) => (
         <div className="date">
           {moment(post.date).format("dddd DD MMMM YYYY")}
         </div>
-        <Md source={post.contents} />
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </div>
   </div>

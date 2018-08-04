@@ -8,6 +8,20 @@ export default styled.div`
     font-family: "Merriweather", sans-serif;
     font-weight: 900;
   }
+  figure {
+    margin: 0;
+    margin-right: -1rem;
+    margin-left: -1rem;
+    img {
+      width: 100%;
+    }
+    figcaption {
+      opacity: 0.5;
+      font-style: italic;
+      text-align: center;
+      font-size: 11px;
+    }
+  }
   a {
     text-decoration: none;
     box-shadow: none;
@@ -24,7 +38,7 @@ export default styled.div`
   .content {
     width: 100%;
     max-width: 700px;
-    padding: 0 1.5rem;
+    padding: 0 0.5rem;
   }
 
   .main-logo {
@@ -48,7 +62,8 @@ export default styled.div`
       margin-bottom: 0px;
     }
     p {
-      line-height: 2;
+      margin: 2rem 0;
+      line-height: 2.2;
       img {
         display: block;
         width: 100%;
