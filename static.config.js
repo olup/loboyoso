@@ -8,6 +8,26 @@ import chokidar from "chokidar";
 import rss from "rss";
 import fs from "fs";
 import { ServerStyleSheet } from "styled-components";
+import cloudinary from "cloudinary";
+
+require("dotenv").config();
+
+cloudinary.config({
+  cloud_name: "ddr0gowa5",
+  api_key: "149193598748766",
+  api_secret: process.env.cloudinary_secret
+});
+
+const getAllImages = () =>
+  new Promise((res, rej) => {
+    cloudinary.v2.api.resources(
+      { type: "upload", prefix: "blog/" },
+      (error, result) => {
+        if (error) rej(error);
+        else res(result.resources);
+      }
+    );
+  });
 
 const summaryLength = 300;
 
@@ -32,7 +52,6 @@ export default {
 
     postsList = posts.map(post => {
       const html = markdown.render(post.contents);
-      console.log(html);
       const $ = cheerio.load(html);
       const summary = $("*")
         .text()
@@ -40,6 +59,8 @@ export default {
 
       return { ...post, html, summary };
     });
+
+    const images = await getAllImages();
 
     return [
       {
@@ -55,6 +76,13 @@ export default {
             post
           })
         }))
+      },
+      {
+        path: "/photos",
+        component: "src/containers/Gallery",
+        getData: () => ({
+          images
+        })
       },
       {
         is404: true,
