@@ -24,10 +24,6 @@ export default withRouteData(({ images }) => (
     <div className="section">
       <div className="content post">
         <h1>Galerie</h1>
-        <p>
-          Les images de ce voyage, celles des articles et celles qu'on aime
-          bien.
-        </p>
       </div>
     </div>
     <div className="section">
