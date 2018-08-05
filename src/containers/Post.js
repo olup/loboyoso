@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouteData, Link } from "react-static";
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.png";
 import Helmet from "react-helmet";
 import moment from "moment";
 import styled from "styled-components";

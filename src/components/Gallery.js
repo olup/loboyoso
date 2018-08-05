@@ -28,15 +28,17 @@ export default class Gallerya extends React.Component {
     });
   };
   render() {
+    const { photos, ...props } = this.props;
     return (
       <div>
         <Gallery
-          photos={this.props.photos.map(p => ({
-            src: p.src.replace("upload/", "upload/c_thumb,w_300,g_face/"),
+          photos={photos.map(p => ({
+            src: p.src.replace("upload/", "upload/c_thumb,w_300/"),
             width: p.width,
             height: p.height
           }))}
           onClick={this.openLightbox}
+          {...props}
         />
         <Lightbox
           images={this.props.photos}

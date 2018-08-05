@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouteData, Link } from "react-static";
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.png";
 import Helmet from "react-helmet";
 import Gallery from "../components/Gallery";
 import styled from "styled-components";
@@ -33,7 +33,7 @@ export default withRouteData(({ images }) => (
     <div className="section">
       <div className="content">
         <Gallery
-          photos={images.map(img => ({ ...img, src: img.url }))}
+          photos={images.reverse().map(img => ({ ...img, src: img.url }))}
           direction={"column"}
         />
       </div>

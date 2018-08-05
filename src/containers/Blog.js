@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { withRouteData, Link } from "react-static";
 import Helmet from "react-helmet";
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.png";
 import Newsletter from "../components/Newsletter";
 import moment from "moment";
 
