@@ -46,5 +46,13 @@ export default withRouteData(({ posts }) => (
         </Fragment>
       );
     })}
+
+    {!posts.length && (
+      <div className="section">
+        <div className="content">
+          <Newsletter />
+        </div>
+      </div>
+    )}
   </div>
 ));

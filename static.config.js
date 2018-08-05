@@ -48,7 +48,7 @@ export default {
     title: "Lobo Y Oso"
   }),
   getRoutes: async () => {
-    const { posts } = await jdown("content", { parseMd: false });
+    const { posts = [] } = await jdown("content", { parseMd: false });
 
     postsList = posts.map(post => {
       const html = markdown.render(post.contents);
