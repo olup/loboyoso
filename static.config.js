@@ -24,7 +24,7 @@ const getAllImages = () =>
       { type: "upload", prefix: "blog/" },
       (error, result) => {
         if (error) rej(error);
-        else res(result.resources);
+        else res(result.resources.reverse());
       }
     );
   });
