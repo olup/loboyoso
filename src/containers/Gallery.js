@@ -33,7 +33,7 @@ export default withRouteData(({ images }) => (
     <div className="section">
       <div className="content">
         <Gallery
-          photos={images.reverse().map(img => ({ ...img, src: img.url }))}
+          photos={images.map(img => ({ ...img, src: img.url }))}
           direction={"column"}
         />
       </div>
