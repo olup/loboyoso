@@ -4,7 +4,7 @@ import logo from "../assets/logo.png";
 import Helmet from "react-helmet";
 import Gallery from "../components/Gallery";
 import styled from "styled-components";
-//
+import BigHeader from "../components/BigHeader";
 
 const SmallLogo = styled.img`
   width: 100px;
@@ -14,18 +14,7 @@ const SmallLogo = styled.img`
 export default withRouteData(({ images }) => (
   <div>
     <Helmet title={"Photos"} />
-    <div className="section">
-      <div className="content">
-        <Link to="/">
-          <SmallLogo style={{ width: 100 }} src={logo} />
-        </Link>
-      </div>
-    </div>
-    <div className="section">
-      <div className="content post">
-        <h1>Galerie</h1>
-      </div>
-    </div>
+    <BigHeader tab="gallery" />
     <div className="section">
       <div className="content">
         <Gallery

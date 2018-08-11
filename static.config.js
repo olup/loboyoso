@@ -62,6 +62,8 @@ export default {
 
     const images = await getAllImages();
 
+    console.log(images)
+
     return [
       {
         path: "/",

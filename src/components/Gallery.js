@@ -1,13 +1,13 @@
 import React from "react";
-import Gallery from "react-photo-gallery";
 import Lightbox from "react-images";
+import Square from "../components/Square";
 
 export default class Gallerya extends React.Component {
   state = { currentImage: 0 };
 
-  openLightbox = (event, obj) => {
+  openLightbox = index => {
     this.setState({
-      currentImage: obj.index,
+      currentImage: index,
       lightboxIsOpen: true
     });
   };
@@ -28,18 +28,22 @@ export default class Gallerya extends React.Component {
     });
   };
   render() {
-    const { photos, ...props } = this.props;
+    const { photos } = this.props;
     return (
       <div>
-        <Gallery
-          photos={photos.map(p => ({
-            src: p.src.replace("upload/", "upload/c_thumb,w_300/"),
-            width: p.width,
-            height: p.height
-          }))}
-          onClick={this.openLightbox}
-          {...props}
-        />
+        {photos.map((photo, index) => (
+          <Square
+            key={index}
+            side="33%"
+            margin="8px"
+            style={{ cursor: "pointer" }}
+          >
+            <img
+              src={photo.src.replace("upload/", "upload/c_thumb,w_300,h_300/")}
+              onClick={() => this.openLightbox(index)}
+            />
+          </Square>
+        ))}
         <Lightbox
           images={this.props.photos}
           onClose={this.closeLightbox}

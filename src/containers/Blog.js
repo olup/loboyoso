@@ -1,22 +1,16 @@
 import React, { Fragment } from "react";
 import { withRouteData, Link } from "react-static";
 import Helmet from "react-helmet";
-import logo from "../assets/logo.png";
 import Newsletter from "../components/Newsletter";
 import moment from "moment";
+import BigHeader from "../components/BigHeader";
 
 moment.locale("fr");
 
 export default withRouteData(({ posts }) => (
   <div>
     <Helmet title={"Lobo Y Oso"} />
-    <div className="section">
-      <div className="content">
-        <Link to="/">
-          <img className="main-logo" src={logo} />
-        </Link>
-      </div>
-    </div>
+    <BigHeader tab="blog" />
     {posts.map((post, index) => {
       return (
         <Fragment key={post.slug}>

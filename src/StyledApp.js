@@ -1,6 +1,9 @@
-import styled from "styled-components";
+import styled, { injectGlobal } from "styled-components";
 
-export default styled.div`
+injectGlobal`
+  body {
+    font-family: "Merriweather", sans-serif;
+  }
   h1,
   h2,
   h3,
@@ -8,25 +11,7 @@ export default styled.div`
     font-family: "Merriweather", sans-serif;
     font-weight: 900;
   }
-  figure {
-    margin: 0;
-    margin-right: -1rem;
-    margin-left: -1rem;
-    img {
-      width: 100%;
-    }
-    figcaption {
-      opacity: 0.5;
-      font-style: italic;
-      text-align: center;
-      font-size: 11px;
-    }
-  }
-  a {
-    text-decoration: none;
-    box-shadow: none;
-    color: inherit;
-  }
+
 
   .section {
     width: 100%;
@@ -39,12 +24,6 @@ export default styled.div`
     width: 100%;
     max-width: 700px;
     padding: 0 0.5rem;
-  }
-
-  .main-logo {
-    margin: 50px auto;
-    margin-bottom: 100px;
-    display: block;
   }
 
   .post {
@@ -69,5 +48,27 @@ export default styled.div`
         width: 100%;
       }
     }
+
+      figure {
+    margin: 0;
+    margin-right: -1rem;
+    margin-left: -1rem;
+    img {
+      width: 100%;
+    }
+    figcaption {
+      opacity: 0.5;
+      font-style: italic;
+      text-align: center;
+      font-size: 11px;
+    }
+  }
+  a {
+    text-decoration: none;
+    box-shadow: none;
+    color: inherit;
+  }
   }
 `;
+
+export default null;

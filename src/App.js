@@ -9,9 +9,7 @@ import StyleddApp from "./StyledApp.js";
 
 const App = () => (
   <Router>
-    <StyleddApp>
-      <Routes />
-    </StyleddApp>
+    <Routes />
   </Router>
 );
 
