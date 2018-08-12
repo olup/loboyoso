@@ -4,6 +4,11 @@ injectGlobal`
   body {
     font-family: "Merriweather", sans-serif;
   }
+  a {
+    text-decoration: none;
+    box-shadow: none;
+    color: inherit;
+  }
   h1,
   h2,
   h3,
@@ -63,11 +68,7 @@ injectGlobal`
       font-size: 11px;
     }
   }
-  a {
-    text-decoration: none;
-    box-shadow: none;
-    color: inherit;
-  }
+
   }
 `;
 
