@@ -39,6 +39,7 @@ export default ({ tab }) => (
         <Link to="/photos" className={tab === "gallery" ? "selected" : ""}>
           Galerie
         </Link>
+        <Link to="https://instagram.com/gawelji">Instagram</Link>
       </Menu>
     </div>
   </div>
